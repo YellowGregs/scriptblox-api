@@ -1,0 +1,31 @@
+{
+  "name": "scriptblox-api",
+  "version": "1.0.1",
+  "description": "JavaScript/TypeScript wrapper for the ScriptBlox API",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    }
+  },
+  "type": "module",
+  "keywords": [
+    "scriptblox",
+    "roblox",
+    "api",
+    "wrapper",
+    "scripts"
+  ],
+  "author": "YellowGreg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YellowGregs/scriptblox-api.git"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
