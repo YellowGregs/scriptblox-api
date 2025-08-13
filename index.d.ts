@@ -81,7 +81,6 @@ export interface Executor {
   type?: string;
 }
 
-// Enums for TypeScript
 export const SORT_BY: {
   VIEWS: "views";
   LIKE_COUNT: "likeCount";
@@ -112,3 +111,4 @@ export default class ScriptBlox {
   getExecutors(): Promise<Executor[]>;
   updateExecutor(body: Record<string, any>): Promise<{ message: string }>;
 }
+
