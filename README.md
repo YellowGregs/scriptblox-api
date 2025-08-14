@@ -136,7 +136,3 @@ MODE = {
 ## License
 
 MIT © YellowGreg
-
-
-Do you also want me to **add a quick "Minimal Example"** section to the README so people can instantly test the API with one call? That way beginners won’t get stuck on `_id` issues.
-```
