@@ -3,7 +3,6 @@
 A simple JavaScript/TypeScript wrapper for the [ScriptBlox API](https://docs.scriptblox.com/).  
 Easily fetch scripts, search, get trending scripts, and executors.
 
----
 
 ## Installation
 
