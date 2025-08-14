@@ -22,14 +22,14 @@ const sb = new ScriptBlox();
 
 const scripts = await sb.fetchScripts({
   page: 1,                     // Start page (default 1)
-  max: 20,                     // Max scripts to fetch (default 20, max 20)
-  mode: MODE.FREE,             // "free" or "paid"
-  patched: 1,                  // 1 = yes, 0 = no
-  key: 0,                      // 1 = yes, 0 = no
-  universal: 1,                // 1 = yes, 0 = no
-  verified: 1,                 // 1 = yes, 0 = no
-  sortBy: SORT_BY.UPDATED_AT,  // Sort criteria
-  order: ORDER.DESC            // Sort order
+  max: 20,                      // Max scripts to fetch (default 20, max 20)
+  mode: MODE.FREE,              // "free" or "paid"
+  patched: 1,                   // 1 = yes, 0 = no
+  key: 0,                       // 1 = yes, 0 = no
+  universal: 1,                 // 1 = yes, 0 = no
+  verified: 1,                  // 1 = yes, 0 = no
+  sortBy: SORT_BY.UPDATED_AT,   // Sort criteria
+  order: ORDER.DESC             // Sort order
 });
 console.log(scripts.result.scripts);
 
@@ -41,12 +41,13 @@ const search_results = await sb.searchScripts("admin", {
 });
 console.log(search_results.result.scripts);
 
-// script details
-const script_details = await sb.getscript_details("script_id_here");
+// Script details
+const firstScriptId = scripts.result.scripts[0]._id;
+const script_details = await sb.getScriptDetails(firstScriptId);
 console.log(script_details.script);
 
-// raw script
-const raw = await sb.getRawScript("script_id_here");
+// Raw script
+const raw = await sb.getRawScript(firstScriptId);
 console.log(raw);
 
 // Trending scripts
@@ -57,7 +58,7 @@ console.log(trending.result.scripts);
 const executors = await sb.getExecutors();
 console.log(executors);
 
-// Update executor (this i don't know why i added it but 🤷‍♂️)
+// Update executor (optional)
 const response = await sb.updateExecutor({
   id: "MyExecutor",
   api_key: "YOUR_API_KEY",
@@ -66,6 +67,8 @@ const response = await sb.updateExecutor({
 });
 console.log(response.message);
 ```
+
+---
 
 ## Usage (CommonJS)
 
@@ -133,3 +136,7 @@ MODE = {
 ## License
 
 MIT © YellowGreg
+
+
+Do you also want me to **add a quick "Minimal Example"** section to the README so people can instantly test the API with one call? That way beginners won’t get stuck on `_id` issues.
+```
